@@ -5,14 +5,8 @@
   "main": "index.js",
   "homepage": "https://stdyrm.github.io/covid19-sba-loans",
   "scripts": {
-    "webpack": "webpack",
-    "debug": "npm run webpack -- --inspect --debug-brk",
-    "dev": "npm run webpack -- --mode development --watch",
-    "prod": "npm run webpack -- --mode production",
-    "start": "webpack-dev-server --mode development --hot",
-    "dev:debug": "npm run debug -- --mode development",
-    "prod:debug": "npm run debug -- --mode production",
-    "debugthis": "node --inspect --inspect-brk ./src/index.js",
+		"start": "webpack-dev-server --mode development --hot --open",
+		"build": "webpack --mode production",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
@@ -43,7 +37,8 @@
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
   },
   "dependencies": {
     "d3": "^5.16.0",
