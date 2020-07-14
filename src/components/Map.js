@@ -10,7 +10,7 @@ import Modal from "./Modal";
 
 // reference
 import PARAMS from "../reference/PARAMS_MAP";
-import USA from "../data/cb_2017_us_zcta510_500k.json";
+import hawaiiFeatureCollection from "../data/hawaii-feature-collection.json";
 
 const { width, height, margin } = PARAMS.chart.dimensions;
 
@@ -35,22 +35,7 @@ const Map = ({ data, dataReference }) => {
 		// axis scales
 		const colorScale = d3.scaleThreshold()
 			.domain([1, 2, 3, 6, 9, 15])
-			.range(d3.schemeBuGn[7])
-		
-		// clean map data
-		const mapUsa = topojson.feature(USA, USA.objects.cb_2017_us_zcta510_500k);
-
-		// filter Hawaii zip codes
-		let hawaiiFeatureCollection = {
-			type: "FeatureCollection",
-			features: []
-		};
-
-		mapUsa.features.forEach(feat => {
-			if (feat.properties.ZCTA5CE10.startsWith("967") || feat.properties.ZCTA5CE10.startsWith("968")) {
-				hawaiiFeatureCollection.features.push(feat);
-			}
-		});
+			.range(d3.schemeBuGn[7]);
 
 		// responsive map dimensions
 		const projection = d3.geoAlbersUsa();

@@ -2,8 +2,8 @@
   "name": "covid19-sba-loans",
   "version": "1.0.0",
   "description": "",
-	"main": "index.js",
-	"homepage": "https://stdyrm.github.io/covid19-sba-loans",
+  "main": "index.js",
+  "homepage": "https://stdyrm.github.io/covid19-sba-loans",
   "scripts": {
     "webpack": "webpack",
     "debug": "npm run webpack -- --inspect --debug-brk",
@@ -53,7 +53,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "topojson": "^3.0.2",
     "topojson-client": "^3.1.0"
   }
 }
