@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
 	entry: "./src/index.js",
@@ -11,7 +13,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				exclude: /node_modules/,
+				exclude: [/node_modules/, /server/, /raw-data/],
 				use: ["babel-loader", "eslint-loader"]
 			},
 			{
@@ -23,7 +25,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				test: /\.(woff|woff2|eot|ttf|otf|csv)$/,
 				use: [
 					"file-loader"
 				]
@@ -31,6 +33,8 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new CleanWebpackPlugin(),
+		new ManifestPlugin(),
 		new HtmlWebpackPlugin({
 			template: "./src/index.html"
 		})

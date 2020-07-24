@@ -9,6 +9,13 @@
     font-style: normal;
 }
 
+@font-face {
+	font-family: 'roboto_slabbold';
+	src: url('./fonts/RobotoSlab-Bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -19,6 +26,10 @@ body {
 	font-family: "source_sans_proregular", "sans-serif";
 	background-color: $palette-background-main;
 	color: $palette-text-primary;
+}
+
+h1,h2,h3,h4 {
+	font-family: "roboto_slabbold", "serif";
 }
 
 header {

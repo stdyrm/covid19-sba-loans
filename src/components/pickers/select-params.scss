@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.select-params {
+	font-weight: 600;
+	color: $palette-text-primary;
+	border: 1px solid $palette-primary-main;
+	border-radius: 3px;
+	padding: .6em;
+}
+
+.select-params:hover {
+	opacity: .8;
+}

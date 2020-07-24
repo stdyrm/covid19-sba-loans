@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from "d3";
-import * as topojson from "topojson-client";
 import "./map.scss";
 
 import PropTypes from "prop-types";
@@ -18,9 +17,6 @@ const Map = ({ data, dataReference }) => {
 	const [activeModal, setActiveModal] = useState(null);
 	
 	const svgRef = useRef(null);
-	const boundsRef = useRef(null);
-	const xRef = useRef(null);
-	const yRef = useRef(null);
 
 	useEffect(() => {
 		const svg = d3.select(svgRef.current);
@@ -35,7 +31,7 @@ const Map = ({ data, dataReference }) => {
 		// axis scales
 		const colorScale = d3.scaleThreshold()
 			.domain([1, 2, 3, 6, 9, 15])
-			.range(d3.schemeBuGn[7]);
+			.range(d3.schemeGreens[7]);
 
 		// responsive map dimensions
 		const projection = d3.geoAlbersUsa();
@@ -49,10 +45,16 @@ const Map = ({ data, dataReference }) => {
 		const t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
 
 		projection.scale(s).translate(t);
+
+		const container = svg.append("g")
+			.attr("id", "container")
+			.attr("transform", "translate(0,0)scale(1,1)");
 		
-		svg.selectAll("path")
+		const map = container.selectAll("path")
 			.data(hawaiiFeatureCollection.features)
 			.join("path")
+
+		map	
 			.style("fill", d => {
 				const zip = d.properties.ZCTA5CE10;
 
@@ -76,7 +78,6 @@ const Map = ({ data, dataReference }) => {
 				tooltip.style("opacity", .9)
 					.html(() => {
 						const zip = z.properties.ZCTA5CE10;
-
 						if (!dataReference[zip]) {
 							return `${z.properties.ZCTA5CE10}<br/>0 loans`; 
 						} else if (dataReference[zip].numLoans === 1) {
@@ -85,8 +86,8 @@ const Map = ({ data, dataReference }) => {
 							return `${z.properties.ZCTA5CE10}<br/>${dataReference[zip].numLoans} loans`
 						}
 					})
-					.style("left", `${d3.event.pageX + 10}px`)
-					.style("top", `${d3.event.pageY + 28}px`)
+					.style("left", d => d3.event.pageX < width / 2 ? `${d3.event.pageX + 10}px` : `${d3.event.pageX - 60}px`)
+					.style("top", `${d3.event.pageY + 24}px`)
 			})
 			.on("mouseout", z => {
 				svg.selectAll(`#id-${z.properties.ZCTA5CE10}`)
@@ -98,23 +99,37 @@ const Map = ({ data, dataReference }) => {
 			.on("click", z => {
 				setActiveModal(z.properties.ZCTA5CE10);
 			});
+		
+		// for zoom and drag functionality
+		const bbox = container.node().getBBox();
+		const vx = bbox.x;
+		const vy = bbox.y;
+		const vw = bbox.width;
+		const vh = bbox.height;
+
+		const defaultView = " " + vx + " " + vy + " " + vw + " " + vh;
+
+		svg
+			.attr("viewBox", defaultView)
+			.attr("preserveAspectRatio", "xMidYMid meet")
+			.call(d3.zoom()
+				.on("zoom", () => {
+					const transform = d3.event.transform;
+					container.attr("transform", transform);
+				})
+			);
 	}, []);
 
 	return (
-		<div className="map-root">
-			<svg
-				ref={svgRef}
-				height={height}
-				width={width}
-				viewBox={`0 0 ${width} ${height}`}
-				className="chart-wrapper"
-			>
-				<g ref={boundsRef}>
-					<g ref={xRef} />
-					<g ref={yRef} />
-				</g>
-			</svg>
-			<Modal data={data} activeModal={activeModal} setActiveModal={setActiveModal} />
+		<div className="map-page-wrapper">
+				<svg
+					ref={svgRef}
+					height={height}
+					width={width}
+					className="chart-wrapper"
+				>
+				</svg>
+				<Modal data={data} activeModal={activeModal} setActiveModal={setActiveModal} />
 		</div>
 	);
 };

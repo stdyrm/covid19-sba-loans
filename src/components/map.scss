@@ -1,20 +1,30 @@
 @import "../variables.scss";
 
-.map-root {
+.map-page-wrapper {
 	display: relative;
+}
+
+.map-dashboard {
+	display: relative;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+.map-dashboard:hover {
+	cursor: pointer;
 }
 
 .chart-wrapper {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+	background-color: #D2FDFF;
 }
 
 .tooltip {
 	position: absolute;
 	border-radius: 4px;
 	padding: .4rem;
-
 	background-color: $palette-secondary-main;
 	color: $palette-text-primary;
 }
