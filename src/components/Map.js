@@ -11,15 +11,30 @@ import Modal from "./Modal";
 import PARAMS from "../reference/PARAMS_MAP";
 import hawaiiFeatureCollection from "../data/hawaii-feature-collection.json";
 
-const { width, height, margin } = PARAMS.chart.dimensions;
+const { width, height } = PARAMS.chart.dimensions;
 
-const Map = ({ data, dataReference }) => {
+const Map = ({ dataOver150K, dataAll, selected, indicator }) => {
 	const [activeModal, setActiveModal] = useState(null);
-	
 	const svgRef = useRef(null);
 
 	useEffect(() => {
 		const svg = d3.select(svgRef.current);
+
+		let data;
+		let logScale = d3.scaleLog();
+		let colorScale = d3.scaleSequential(d => d3.interpolateYlOrBr(logScale(d)));
+		let max;
+
+		if (selected.value === "all-loans") { 
+			data = dataAll;
+			max = d3.max(Object.values(data), d => d[indicator.value]);
+			logScale.domain([1, max]);
+		
+		} else if (selected.value === "loans-over-150k") {
+			data = dataOver150K;
+			max = d3.max(Object.values(data), d => d[indicator.value]);
+			logScale.domain([1, max]);
+		};
 
 		// tooltip
 		let tooltip = d3.select("body")
@@ -28,11 +43,6 @@ const Map = ({ data, dataReference }) => {
 			.attr("id", "map-tooltip")
 			.style("opacity", 0);
 		
-		// axis scales
-		const colorScale = d3.scaleThreshold()
-			.domain([1, 2, 3, 6, 9, 15])
-			.range(d3.schemeGreens[7]);
-
 		// responsive map dimensions
 		const projection = d3.geoAlbersUsa();
 		const path = d3.geoPath()
@@ -58,14 +68,14 @@ const Map = ({ data, dataReference }) => {
 			.style("fill", d => {
 				const zip = d.properties.ZCTA5CE10;
 
-				if (!dataReference[zip]) {
+				if (!data[zip] || data[zip][indicator.value] === 0) {
 					return "#789288";
 				} else {
-					const loanQtyByZip = dataReference[zip].numLoans;
-					return colorScale(loanQtyByZip);
+					const indicatorVal = data[zip][indicator.value];
+					return colorScale(indicatorVal);
 				}
 			})
-			.attr("stroke", "#fff")
+			.attr("stroke", "#394742")
 			.attr("stroke-width", ".2px")
 			.attr("class", "map-region")
 			.attr("id", d => `id-${d.properties.ZCTA5CE10}`)
@@ -78,12 +88,12 @@ const Map = ({ data, dataReference }) => {
 				tooltip.style("opacity", .9)
 					.html(() => {
 						const zip = z.properties.ZCTA5CE10;
-						if (!dataReference[zip]) {
-							return `${z.properties.ZCTA5CE10}<br/>0 loans`; 
-						} else if (dataReference[zip].numLoans === 1) {
-							return `${z.properties.ZCTA5CE10}<br/>${dataReference[zip].numLoans} loan`
+						if (!data[zip]) {
+							return `${z.properties.ZCTA5CE10}<br/>0 ${indicator.units}`; 
+						} else if (indicator.value === "totAmountUnder150K") {
+							return `${z.properties.ZCTA5CE10}<br/>$${data[zip][indicator.value].toLocaleString()} ${indicator.units}`
 						} else {
-							return `${z.properties.ZCTA5CE10}<br/>${dataReference[zip].numLoans} loans`
+							return `${z.properties.ZCTA5CE10}<br/>${data[zip][indicator.value].toLocaleString()} ${indicator.units}`
 						}
 					})
 					.style("left", d => d3.event.pageX < width / 2 ? `${d3.event.pageX + 10}px` : `${d3.event.pageX - 60}px`)
@@ -91,10 +101,13 @@ const Map = ({ data, dataReference }) => {
 			})
 			.on("mouseout", z => {
 				svg.selectAll(`#id-${z.properties.ZCTA5CE10}`)
-					.attr("stroke", "#fff")
+					.attr("stroke", "#394742")
 					.attr("stroke-width", ".2px")
 					.style("opacity", 1)
-				tooltip.style("opacity", 0)
+				tooltip
+					.style("opacity", 0)
+					.style("left", 0)
+					.style("top", 0)
 			})
 			.on("click", z => {
 				setActiveModal(z.properties.ZCTA5CE10);
@@ -106,8 +119,8 @@ const Map = ({ data, dataReference }) => {
 		const vy = bbox.y;
 		const vw = bbox.width;
 		const vh = bbox.height;
-
-		const defaultView = " " + vx + " " + vy + " " + vw + " " + vh;
+		
+		const defaultView = `${vx} ${vy} ${vw} ${vh}`;
 
 		svg
 			.attr("viewBox", defaultView)
@@ -117,19 +130,29 @@ const Map = ({ data, dataReference }) => {
 					const transform = d3.event.transform;
 					container.attr("transform", transform);
 				})
-			);
-	}, []);
+		);
+		
+		return () => {
+			container.selectAll("path").remove();
+		}
+	}, [dataOver150K, dataAll, selected, indicator]);
 
 	return (
 		<div className="map-page-wrapper">
+			<div className="chart-wrapper">
 				<svg
 					ref={svgRef}
 					height={height}
 					width={width}
-					className="chart-wrapper"
+					// className="chart-wrapper"
+					className="chart"
 				>
 				</svg>
-				<Modal data={data} activeModal={activeModal} setActiveModal={setActiveModal} />
+				<Modal
+					activeModal={activeModal}
+					setActiveModal={setActiveModal}
+				/>
+			</div>
 		</div>
 	);
 };
@@ -137,6 +160,8 @@ const Map = ({ data, dataReference }) => {
 export default Map;
 
 Map.propTypes = {
-	data: PropTypes.arrayOf(PropTypes.object).isRequired,
-	dataReference: PropTypes.object.isRequired
+	dataOver150K: PropTypes.object.isRequired,
+	dataAll: PropTypes.object.isRequired,
+	selected: PropTypes.object.isRequired,
+	indicator: PropTypes.object.isRequired
 };

@@ -1,0 +1,566 @@
+[
+  {
+    "zip": 96797,
+    "city": "Waipahu",
+    "county": "Honolulu",
+    "pop": 74262
+  },
+  {
+    "zip": 96706,
+    "city": "Ewa Beach",
+    "county": "Honolulu",
+    "pop": 72799
+  },
+  {
+    "zip": 96818,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 59482
+  },
+  {
+    "zip": 96817,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 56496
+  },
+  {
+    "zip": 96819,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 53886
+  },
+  {
+    "zip": 96789,
+    "city": "Mililani",
+    "county": "Honolulu",
+    "pop": 53734
+  },
+  {
+    "zip": 96744,
+    "city": "Kaneohe",
+    "county": "Honolulu",
+    "pop": 51692
+  },
+  {
+    "zip": 96734,
+    "city": "Kailua",
+    "county": "Honolulu",
+    "pop": 50386
+  },
+  {
+    "zip": 96792,
+    "city": "Waianae",
+    "county": "Honolulu",
+    "pop": 50127
+  },
+  {
+    "zip": 96816,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 49664
+  },
+  {
+    "zip": 96720,
+    "city": "Hilo",
+    "county": "Hawaii",
+    "pop": 49405
+  },
+  {
+    "zip": 96707,
+    "city": "Kapolei",
+    "county": "Honolulu",
+    "pop": 47958
+  },
+  {
+    "zip": 96822,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 46645
+  },
+  {
+    "zip": 96786,
+    "city": "Wahiawa",
+    "county": "Honolulu",
+    "pop": 44271
+  },
+  {
+    "zip": 96701,
+    "city": "Aiea",
+    "county": "Honolulu",
+    "pop": 40439
+  },
+  {
+    "zip": 96740,
+    "city": "Kailua Kona",
+    "county": "Hawaii",
+    "pop": 39694
+  },
+  {
+    "zip": 96782,
+    "city": "Pearl City",
+    "county": "Honolulu",
+    "pop": 38335
+  },
+  {
+    "zip": 96793,
+    "city": "Wailuku",
+    "county": "Maui",
+    "pop": 33074
+  },
+  {
+    "zip": 96826,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 31945
+  },
+  {
+    "zip": 96732,
+    "city": "Kahului",
+    "county": "Maui",
+    "pop": 29668
+  },
+  {
+    "zip": 96825,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 29375
+  },
+  {
+    "zip": 96753,
+    "city": "Kihei",
+    "county": "Maui",
+    "pop": 27649
+  },
+  {
+    "zip": 96815,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 25268
+  },
+  {
+    "zip": 96813,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 25219
+  },
+  {
+    "zip": 96761,
+    "city": "Lahaina",
+    "county": "Maui",
+    "pop": 23223
+  },
+  {
+    "zip": 96814,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 19527
+  },
+  {
+    "zip": 96746,
+    "city": "Kapaa",
+    "county": "Kauai",
+    "pop": 19324
+  },
+  {
+    "zip": 96821,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 18539
+  },
+  {
+    "zip": 96766,
+    "city": "Lihue",
+    "county": "Kauai",
+    "pop": 18272
+  },
+  {
+    "zip": 96768,
+    "city": "Makawao",
+    "county": "Maui",
+    "pop": 18155
+  },
+  {
+    "zip": 96749,
+    "city": "Keaau",
+    "county": "Hawaii",
+    "pop": 17484
+  },
+  {
+    "zip": 96778,
+    "city": "Pahoa",
+    "county": "Hawaii",
+    "pop": 15125
+  },
+  {
+    "zip": 96743,
+    "city": "Kamuela",
+    "county": "Hawaii",
+    "pop": 14496
+  },
+  {
+    "zip": 96708,
+    "city": "Haiku",
+    "county": "Maui",
+    "pop": 10243
+  },
+  {
+    "zip": 96795,
+    "city": "Waimanalo",
+    "county": "Honolulu",
+    "pop": 9988
+  },
+  {
+    "zip": 96790,
+    "city": "Kula",
+    "county": "Maui",
+    "pop": 9776
+  },
+  {
+    "zip": 96771,
+    "city": "Mountain View",
+    "county": "Hawaii",
+    "pop": 7934
+  },
+  {
+    "zip": 96704,
+    "city": "Captain Cook",
+    "county": "Hawaii",
+    "pop": 7871
+  },
+  {
+    "zip": 96791,
+    "city": "Waialua",
+    "county": "Honolulu",
+    "pop": 7715
+  },
+  {
+    "zip": 96712,
+    "city": "Haleiwa",
+    "county": "Honolulu",
+    "pop": 7575
+  },
+  {
+    "zip": 96738,
+    "city": "Waikoloa",
+    "county": "Hawaii",
+    "pop": 6728
+  },
+  {
+    "zip": 96762,
+    "city": "Laie",
+    "county": "Honolulu",
+    "pop": 6686
+  },
+  {
+    "zip": 96741,
+    "city": "Kalaheo",
+    "county": "Kauai",
+    "pop": 6284
+  },
+  {
+    "zip": 96756,
+    "city": "Koloa",
+    "county": "Kauai",
+    "pop": 6206
+  },
+  {
+    "zip": 96727,
+    "city": "Honokaa",
+    "county": "Hawaii",
+    "pop": 5270
+  },
+  {
+    "zip": 96717,
+    "city": "Hauula",
+    "county": "Honolulu",
+    "pop": 5148
+  },
+  {
+    "zip": 96737,
+    "city": "Ocean View",
+    "county": "Hawaii",
+    "pop": 4926
+  },
+  {
+    "zip": 96748,
+    "city": "Kaunakakai",
+    "county": "Maui",
+    "pop": 4380
+  },
+  {
+    "zip": 96752,
+    "city": "Kekaha",
+    "county": "Kauai",
+    "pop": 3572
+  },
+  {
+    "zip": 96750,
+    "city": "Kealakekua",
+    "county": "Hawaii",
+    "pop": 3370
+  },
+  {
+    "zip": 96785,
+    "city": "Volcano",
+    "county": "Hawaii",
+    "pop": 3322
+  },
+  {
+    "zip": 96754,
+    "city": "Kilauea",
+    "county": "Kauai",
+    "pop": 3112
+  },
+  {
+    "zip": 96755,
+    "city": "Kapaau",
+    "county": "Hawaii",
+    "pop": 3010
+  },
+  {
+    "zip": 96731,
+    "city": "Kahuku",
+    "county": "Honolulu",
+    "pop": 2984
+  },
+  {
+    "zip": 96725,
+    "city": "Holualoa",
+    "county": "Hawaii",
+    "pop": 2984
+  },
+  {
+    "zip": 96716,
+    "city": "Hanapepe",
+    "county": "Kauai",
+    "pop": 2982
+  },
+  {
+    "zip": 96760,
+    "city": "Kurtistown",
+    "county": "Hawaii",
+    "pop": 2917
+  },
+  {
+    "zip": 96705,
+    "city": "Eleele",
+    "county": "Kauai",
+    "pop": 2869
+  },
+  {
+    "zip": 96763,
+    "city": "Lanai City",
+    "county": "Maui",
+    "pop": 2826
+  },
+  {
+    "zip": 96857,
+    "city": "Schofield Barracks",
+    "county": "Honolulu",
+    "pop": 2815
+  },
+  {
+    "zip": 96779,
+    "city": "Paia",
+    "county": "Maui",
+    "pop": 2708
+  },
+  {
+    "zip": 96772,
+    "city": "Naalehu",
+    "county": "Hawaii",
+    "pop": 2472
+  },
+  {
+    "zip": 96722,
+    "city": "Princeville",
+    "county": "Kauai",
+    "pop": 2213
+  },
+  {
+    "zip": 96860,
+    "city": "Pearl Harbor",
+    "county": "Honolulu",
+    "pop": 2203
+  },
+  {
+    "zip": 96703,
+    "city": "Anahola",
+    "county": "Kauai",
+    "pop": 2087
+  },
+  {
+    "zip": 96777,
+    "city": "Pahala",
+    "county": "Hawaii",
+    "pop": 2061
+  },
+  {
+    "zip": 96796,
+    "city": "Waimea",
+    "county": "Kauai",
+    "pop": 1952
+  },
+  {
+    "zip": 96719,
+    "city": "Hawi",
+    "county": "Hawaii",
+    "pop": 1702
+  },
+  {
+    "zip": 96783,
+    "city": "Pepeekeo",
+    "county": "Hawaii",
+    "pop": 1645
+  },
+  {
+    "zip": 96730,
+    "city": "Kaaawa",
+    "county": "Honolulu",
+    "pop": 1359
+  },
+  {
+    "zip": 96776,
+    "city": "Paauilo",
+    "county": "Hawaii",
+    "pop": 1302
+  },
+  {
+    "zip": 96781,
+    "city": "Papaikou",
+    "county": "Hawaii",
+    "pop": 1229
+  },
+  {
+    "zip": 96713,
+    "city": "Hana",
+    "county": "Maui",
+    "pop": 1201
+  },
+  {
+    "zip": 96729,
+    "city": "Hoolehua",
+    "county": "Maui",
+    "pop": 1191
+  },
+  {
+    "zip": 96714,
+    "city": "Hanalei",
+    "county": "Kauai",
+    "pop": 907
+  },
+  {
+    "zip": 96747,
+    "city": "Kaumakani",
+    "county": "Kauai",
+    "pop": 874
+  },
+  {
+    "zip": 96780,
+    "city": "Papaaloa",
+    "county": "Hawaii",
+    "pop": 700
+  },
+  {
+    "zip": 96853,
+    "city": "Hickam Afb",
+    "county": "Honolulu",
+    "pop": 599
+  },
+  {
+    "zip": 96770,
+    "city": "Maunaloa",
+    "county": "Maui",
+    "pop": 597
+  },
+  {
+    "zip": 96764,
+    "city": "Laupahoehoe",
+    "county": "Hawaii",
+    "pop": 592
+  },
+  {
+    "zip": 96757,
+    "city": "Kualapuu",
+    "county": "Maui",
+    "pop": 580
+  },
+  {
+    "zip": 96726,
+    "city": "Honaunau",
+    "county": "Hawaii",
+    "pop": 480
+  },
+  {
+    "zip": 96728,
+    "city": "Honomu",
+    "county": "Hawaii",
+    "pop": 453
+  },
+  {
+    "zip": 96759,
+    "city": "Kunia",
+    "county": "Honolulu",
+    "pop": 360
+  },
+  {
+    "zip": 96765,
+    "city": "Lawai",
+    "county": "Kauai",
+    "pop": 360
+  },
+  {
+    "zip": 96769,
+    "city": "Makaweli",
+    "county": "Kauai",
+    "pop": 294
+  },
+  {
+    "zip": 96710,
+    "city": "Hakalau",
+    "county": "Hawaii",
+    "pop": 246
+  },
+  {
+    "zip": 96774,
+    "city": "Ookala",
+    "county": "Hawaii",
+    "pop": 181
+  },
+  {
+    "zip": 96859,
+    "city": "Tripler Army Medical Ctr",
+    "county": "Honolulu",
+    "pop": 111
+  },
+  {
+    "zip": 96742,
+    "city": "Kalaupapa",
+    "county": "Maui",
+    "pop": 75
+  },
+  {
+    "zip": 96751,
+    "city": "Kealia",
+    "county": "Kauai",
+    "pop": 69
+  },
+  {
+    "zip": 96773,
+    "city": "Ninole",
+    "county": "Hawaii",
+    "pop": 59
+  },
+  {
+    "zip": 96863,
+    "city": "M C B H Kaneohe Bay",
+    "county": "Honolulu",
+    "pop": 46
+  },
+  {
+    "zip": 96850,
+    "city": "Honolulu",
+    "county": "Honolulu",
+    "pop": 0
+  }
+]

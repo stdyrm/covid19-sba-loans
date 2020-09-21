@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
 import { useTransition, animated } from "react-spring";
+import ZIPCODES from "../reference/zip-codes-wpr.json";
 import "./modal.scss";
 
-const Modal = ({ data, activeModal }) => {
+const Modal = ({ activeModal, setActiveModal }) => {
 	const transitions = useTransition(activeModal, null, {
 		from: { position: "absolute", opacity: 0 },
 		enter: { opacity: 1 },
-		leave: { opacity: 0 }
+		leave: { opacity: 0, width: 0 }
 	});
 
 	return (
@@ -18,17 +19,16 @@ const Modal = ({ data, activeModal }) => {
 						className="modal-wrapper"
 						key={key}
 						style={props}
+						onClick={() => setActiveModal(null)}
 					>
 						<div className = "modal">
 							<h3 className="modal-title">{activeModal}</h3>
-							<p className="modal-contents">
-								{!data.filter(d => d.key === activeModal)[0]
-									? "0 loans"
-									: data.filter(d => d.key === activeModal)[0].numLoans === 1
-										? "1 loan"
-										: `${data.filter(d => d.key === activeModal)[0].numLoans} loans`
-								}
-							</p>
+							{ZIPCODES.filter(d => d.zip.toString() === activeModal)[0]
+								&& <div>
+										<p>{ZIPCODES.filter(d => d.zip.toString() === activeModal)[0].city}</p>
+										<p>{ZIPCODES.filter(d => d.zip.toString() === activeModal)[0].county} County</p>
+									</div>								
+							}
 						</div>
 					</animated.div>
 			})
@@ -40,6 +40,6 @@ const Modal = ({ data, activeModal }) => {
 export default Modal;
 
 Modal.propTypes = {
-	data: PropTypes.arrayOf(PropTypes.object).isRequired,
-	activeModal: PropTypes.string
+	activeModal: PropTypes.string,
+	setActiveModal: PropTypes.func
 };

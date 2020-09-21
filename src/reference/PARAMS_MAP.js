@@ -3,11 +3,11 @@ const PARAMS = {
 	chart: {
 		dimensions: {
 			width: window.innerWidth * .9,
-			height: window.innerHeight * .7,
+			height: window.innerHeight * .5,
 			margin: {
 				top: 20,
-				bottom: 60,
-				left: 60,
+				bottom: 40,
+				left: 40,
 				right: 20
 			}
 		},

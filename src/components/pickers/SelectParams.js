@@ -1,16 +1,29 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./select-params.scss";
 
-const SelectParams = () => {
+const SelectParams = ({ setSelected }) => {
+	const handleSelected = (e) => {
+		setSelected({
+			value: e.target.value,
+			label: e.target.value.replace(/-/g," ")
+		});
+	};
 
-  return (
-    <label htmlFor="params">
-      <select name="target-attribute" className="select-params">
-				<option value="loans-o150k">Loans $150K and above</option>
-				<option value="loans-u150k">Loans below $150K</option>
+	return (
+		<div>
+    	<label htmlFor="params">Loan size grouping</label><br />
+      <select name="target-attribute" className="select-params" onChange={handleSelected}>
+				<option value="all-loans">All loans</option>
+				<option value="loans-over-150k">$150K and above</option>
       </select>
-    </label>
+		</div>
   );
 };
 
 export default SelectParams;
+
+SelectParams.propTypes = {
+	selected: PropTypes.object.isRequired,
+	setSelected: PropTypes.func.isRequired
+};

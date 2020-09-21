@@ -2,3 +2,5 @@ node_modules
 dist
 server
 raw-data
+firebase
+functions

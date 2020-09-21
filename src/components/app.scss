@@ -10,12 +10,23 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
+	flex-wrap: wrap;
 	padding-top: 2rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
 	background-color: $palette-background-main;
 	width: 100%;
 	z-index: 1;
+}
+
+.app-toolbar-selectors {
+	display: flex;
+	flex-wrap: wrap;
+	div {
+		font-weight: 700;
+		margin-top: .3rem;
+		margin-right: .3rem;
+	}
 }
 
 .app-footer {
@@ -26,4 +37,10 @@
 	background-color: $palette-background-main;
 	width: 100%;
 	z-index: 1;
+	p {
+		margin-bottom: 1.25em;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
 }

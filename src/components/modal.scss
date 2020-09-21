@@ -2,11 +2,14 @@
 
 .modal-wrapper {
 	position: absolute;
-	bottom: 100px;
-	left: 2em;
+	top: 70%;
+	left: 5%;
 	overflow: hidden;
 	border-radius: 3px;
 	box-shadow: 1px 1px 8px 0 $palette-primary-gray;
+	:hover {
+		cursor: pointer;
+	}
 }
 
 .modal {
