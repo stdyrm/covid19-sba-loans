@@ -48,7 +48,7 @@
     "webpack-merge": "^5.1.4"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "csv-parser": "^2.3.3",
     "d3": "^5.16.0",
     "d3-geo": "^2.0.1",
